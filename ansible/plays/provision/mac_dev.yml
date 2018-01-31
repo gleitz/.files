@@ -51,7 +51,7 @@
       - cheat
       - dockutil
       # - gnupg2 # requires java...
-      - htop
+      # - htop
       # - mas
       - node
       - openssl

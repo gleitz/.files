@@ -50,11 +50,11 @@
       - dockutil
       - geth
       - git-lfs
-      - htop
+      # - htop
       - imagemagick
       - kubectl
       - markdown
-      - mongodb
+      # - mongodb
       - node
       - nvm
       - openssl
