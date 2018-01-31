@@ -34,7 +34,6 @@
       - homebrew/core
       - caskroom/cask
       - caskroom/versions
-      - caskroom/font
     homebrew_installed_packages:
       # - antibody
       # - cheat
@@ -120,11 +119,6 @@
       - xquartz
       - yakyak
       - zoomus
-    # fonts
-      - font-arvo # for OAKWEAR & CO.
-      - font-fira-code
-      - font-fira-mono-for-powerline
-      - font-fontawesome
 
     pip_packages:
       - name: pylint

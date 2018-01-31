@@ -45,7 +45,6 @@
       - homebrew/core
       - caskroom/cask
       - caskroom/versions
-      - caskroom/fonts
       - getantibody/homebrew-antibody
     homebrew_installed_packages:
       - antibody
@@ -118,11 +117,6 @@
       # - viscosity
       - vlc
       - whatsapp
-    # fonts
-      # - font-arvo # for OAKWEAR & CO.
-      - font-fira-code
-      - font-fira-mono-for-powerline
-      - font-fontawesome
 
     atom_installed_packages:
       - busy-signal
