@@ -32,7 +32,7 @@
   become_method: sudo
 
   vars:
-    user_name: me
+    user_name: gleitz
     user_group: staff
     home: "~"
     roles_dir: "{{ home }}/.files/ansible/roles"
