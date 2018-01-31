@@ -125,3 +125,98 @@ alias reload="exec $SHELL -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# From gleitz
+
+# Aliases
+alias h='howdoi'
+alias s='soundscrape'
+alias pp='python -mjson.tool'
+alias python='python3'
+alias pip='pip3'
+alias scprsync='rsync -avzP'
+alias ll='ls -l'
+alias rmpyc='find . -name "*.pyc" -exec trash {} \;'
+alias rmelc='find . -name "*.elc" -exec trash {} \;'
+alias eamcs='emacs'
+alias emcas='emacs'
+alias emac='emacs'
+alias emacs='emacsclient'
+alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient'
+alias fixaudio="sudo killall coreaudiod"
+alias pipupgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+alias server="python -m http.server 8000 --bind 127.0.0.1"
+alias camerafix="sudo killall VDCAssistant ; sudo killall AppleCameraAssistant"
+alias v.menu='menuvirtualenv'
+alias v='workon'
+alias v.deactivate='deactivate'
+alias v.mk='mkvirtualenv'
+alias v.mk3='mkvirtualenv --python=/usr/local/bin/python3'
+alias v.rm='rmvirtualenv'
+alias v.switch='workon'
+alias v.add2virtualenv='add2virtualenv'
+alias v.cdsitepackages='cdsitepackages'
+alias v.cd='cdvirtualenv'
+alias v.lssitepackages='lssitepackages'
+alias cd="venv_cd"
+alias z="venv_z"
+
+# Exports
+export MANPATH=$MANPATH:/opt/local/share/man
+export INFOPATH=$INFOPATH:/opt/local/share/info
+export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
+export MAVEN_OPTS="-Xmx3072m -XX:MaxPermSize=256m"
+export NODE_PATH="/usr/local/lib/node_modules"
+export WORKON_HOME="~/.virtualenvs"
+export EDITOR='/Applications/Emacs.app/Contents/MacOS//bin-x86_64-10_9/emacsclient -t'
+export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS//bin-x86_64-10_9/emacsclient -t"
+#export MACOSX_DEPLOYMENT_TARGET=10.8
+export PIP_DOWNLOAD_CACHE=$HOME/.pip
+export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Users/bgleitzman/projects/dip/Darwin/lib/"
+export ANDROID_HOME="/Users/bgleitzman/projects/android/sdk/"
+export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
+export PYTHONIOENCODING=utf-8
+
+# needed for sed
+# http://stackoverflow.com/questions/19242275/sed-re-error-illegal-byte-sequence-on-mac-os-x
+export LC_CTYPE=C
+export LANG=C
+
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
+export HISTCONTROL=ignoredups:erasedups
+
+# Exports
+export WORKON_HOME="~/.virtualenvs"
+export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient -t'
+export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient -t"
+export PIP_DOWNLOAD_CACHE=$HOME/.pip
+export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
+export PYTHONIOENCODING=utf-8
+export LC_CTYPE=C
+export LANG=C
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
+export HISTCONTROL=ignoredups:erasedups
+
+# Misc
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+# Sources
+source /Users/bgleitzman/.rvm/scripts/rvm
+source /usr/local/bin/setup_completeme_key_binding.sh
+eval $(thefuck --alias)
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s $HOME/.avn/bin/avn.sh ] && . $HOME/.avn/bin/avn.sh # load avn
+
+[ -s $HOME/projects/google-cloud-sdk/completion.bash.inc ] && . $HOME/projects/google-cloud-sdk/completion.bash.inc
+[ -s $HOME/projects/google-cloud-sdk/path.bash.inc ] && . $HOME/projects/google-cloud-sdk/path.bash.inc

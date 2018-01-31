@@ -76,7 +76,7 @@ Homebrew
 
 Generate SSH Keys
 ---
-1. `ssh-keygen -t rsa -b 4096 -C "me@andrewparadi.com"`
+1. `ssh-keygen -t rsa -b 4096 -C "gleitz@mit.edu"`
 1. `pbcopy < ~/.ssh/id_rsa.pub` save to clipboard and then to GitHub account
 
 DNS

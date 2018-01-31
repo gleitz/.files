@@ -330,3 +330,61 @@ extract () {
     echo "'$1' is not a valid file"
 	fi
 }
+
+# Gleitz
+
+# Functions
+function pgrep { ps waux | grep $1; }
+function fgrep { git grep $1 $(git rev-list --all); }
+function fsize { du -d=1 $1 | sort -nk1; }
+function checkport { sudo lsof -i :$1; } # checks for activity on given port
+function gitrevive { git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"; }
+function where { ls -la `which $1`; }
+function who { whois "$@" | sed -e ':a' -e 'N' -e '$!ba' -e 's/NOTICE.*//g'; }
+function howdoi_arqade { export HOWDOI_URL="gaming.stackexchange.com" && howdoi "$@"; }
+function gad { gcloud app deploy --no-promote app-gae.yaml --version=$1-$(git rev-parse --short HEAD); }
+function parse_git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'; }
+function motd () {
+    if [ -e ~/.motd.txt ]; then
+        local rnd=1
+        fn=~/.motd.txt
+        lns=$(wc -l $fn | sed 's|[ ]*\([0-9]*\).*|\1|')
+        if [ "$lns" = 0 ]; then
+          rnd=1
+        else
+          rnd=$(( (RANDOM % (lns + 1)) + 1 ))
+        fi
+        sed -n ${rnd}p $fn
+    fi
+}
+motd
+menuvirtualenv() {
+    select env in `lsvirtualenv -b`; do
+        if [ -n "$env" ]; then
+            workon "$env"
+        fi;
+        break;
+    done;
+}
+function check_for_virtual_env {
+  [ -d .git ] || git rev-parse --git-dir &> /dev/null
+
+  if [ $? == 0 ]; then
+    local ENV_NAME=`basename \`pwd\``
+
+    if [ "${VIRTUAL_ENV##*/}" != $ENV_NAME ] && [ -e $WORKON_HOME/$ENV_NAME/bin/activate ]; then
+      workon $ENV_NAME && export CD_VIRTUAL_ENV=$ENV_NAME
+    fi
+  elif [ $CD_VIRTUAL_ENV ]; then
+    deactivate && unset CD_VIRTUAL_ENV
+  fi
+}
+check_for_virtual_env
+
+function venv_cd {
+  cd "$@" && check_for_virtual_env
+}
+
+function venv_z {
+  z "$@" && check_for_virtual_env
+}

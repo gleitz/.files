@@ -1,4 +1,38 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Andrew Paradi
-	email = me@andrewparadi.com
+	name = Benjamin Gleitzman
+	email = gleitz@mit.edu
+
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	pnr = pull --no-rebase
+	patch = am <
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	who = shortlog -s --
+	last = diff @~..@
+	staged = diff --cached
+	fgrep = grep @{1} $(git rev-list --all)
+	uncommit = reset --soft HEAD^
+	pu = !"git fetch origin -v; git fetch upstream -v; git rebase upstream/master"
+
+[color]
+	ui = true
+[github]
+	user = gleitz
+[push]
+	default = current
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = /Users/bgleitzman/.gitignore_global
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[pull]
+	rebase = true

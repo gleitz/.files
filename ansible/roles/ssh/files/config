@@ -3,17 +3,36 @@ Host *
   ChallengeResponseAuthentication yes
   IdentityFile ~/.ssh/id_rsa
   HashKnownHosts yes
-  PasswordAuthentication no
-  UseKeychain no
-
-Host altiscale
-  User adsparad
-  Hostname ia.z42.altiscale.com
-  Port 1763
-  IdentityFile ~/.ssh/id_rsa
+  ControlMaster auto
+  ControlPath /tmp/%r@%h:%p
+  ControlPersist 1
   Compression yes
-  ServerAliveInterval 15
-  DynamicForward localhost:1080
-  TCPKeepAlive yes
-  Protocol 2,1
 
+Host ideas
+  HostName gleitz.peachyweb.com
+  User gleitz
+
+Host gleitz
+  HostName gleitzman.com
+  User gleitz
+
+Host gleitzman
+  HostName gleitzman.com
+  User gleitz
+
+Host mit
+  User gleitz
+  HostName linux.mit.edu
+
+Host sublimate
+  User gleitz_sublimate
+  HostName ssh.phx.nearlyfreespeech.net
+
+Host ruse-aws
+  HostName 52.37.105.174
+  User ubuntu
+  IdentityFile ~/.ssh/ruse_aws.pem
+
+Host retropie
+  HostName retropie.local
+  User pi
