@@ -185,7 +185,7 @@
         path: "/Applications/Google Chrome.app"
         pos: 2
       - name: iTerm
-        path: /Applications/iTerm.app
+        path: "/Applications/iTerm.app"
         pos: 3
       - name: Spotify
         path: "/Applications/Spotify.app"
@@ -203,11 +203,11 @@
         path: "/Applications/WhatsApp.app"
         pos: 8
       - name: YakYak
-        path: /Applications/YakYak.app
+        path: "/Applications/YakYak.app"
         pos: 9
       - name: Remember The Milk
-        path: /Applications/Remember The Milk.app
+        path: "/Applications/Remember The Milk.app"
         pos: 10
       - name: Fantastical 2
-        path: /Applications/Fantastial 2.app
+        path: "/Applications/Fantastial 2.app"
         pos: 11
