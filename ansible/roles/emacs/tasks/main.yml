@@ -1,0 +1,8 @@
+---
+
+- name: clone .emacs.d git repo
+  git:
+    repo: "{{ dot_emacs_dot_d_repo }}"
+    dest: "{{ home }}/.emacs.d"
+    accept_hostkey: yes
+    force: yes
