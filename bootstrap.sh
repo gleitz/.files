@@ -215,8 +215,8 @@ function mac_bootstrap {
   exit 0
 }
 
-function linux_bootstrap {
-  status a "Install Linux Base Shell"
+function configure_shell {
+  status a "Install Base Shell Scripts"
   # AP Bash Powerline Theme
   safe_download ~/.ap-bash-powerline.sh https://raw.githubusercontent.com/gleitz/.files/master/ansible/roles/bash/files/.ap-bash-powerline.sh
   safe_source ~/.ap-bash-powerline.sh ~/.bashrc
@@ -234,6 +234,10 @@ function linux_bootstrap {
   safe_download ~/.ap-functions https://raw.githubusercontent.com/gleitz/.files/master/ansible/roles/functions/files/.ap-functions
   safe_source ~/.ap-functions ~/.bashrc
   safe_source ~/.ap-functions ~/.zshrc
+}
+
+function linux_bootstrap {
+  configure_shell
 
   echo "curl -s https://raw.githubusercontent.com/gleitz/.files/master/bootstrap.sh | bash -s" > .ap-update.sh
   chmod +x .ap-update.sh
@@ -316,6 +320,7 @@ fi
 case "$(uname)" in
     Darwin)   PLATFORM=Darwin
               mac_bootstrap
+              configure_shell
               ;;
     Linux)    PLATFORM=Linux
               LINUX=true
