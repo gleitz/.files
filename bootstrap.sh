@@ -122,6 +122,8 @@ function mac_install_dependencies {
     status b  "Install xcode-select (Command Line Tools)"
   fi
 
+  sudo xcodebuild -license accept
+
   if [[ ! -x "${HOMEBREW_DIR}/bin/brew" ]]; then
     status a "Install Homebrew"
     mkdir -p ${HOMEBREW_DIR} && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C $HOMEBREW_DIR
