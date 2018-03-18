@@ -92,7 +92,7 @@ PLAY=mac_core                       # -p
 MAS_EMAIL=                          # -m
 MAS_PASSWORD=                       # -n
 TEST=false                          # -t
-USER_NAME=me                        # -u
+USER_NAME=gleitz                    # -u
 SECURE=false                        # -s
 
 status a "📈  Registered Configuration"

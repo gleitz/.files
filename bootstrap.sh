@@ -75,7 +75,7 @@ function show_help {
   echo "-n      |   Mac App Store password            |   \"\"                  "
   echo "-s      |   Set hostname, turn on Firewall    |                         "
   echo "-t      |   Test env, don't detach Git head   |                         "
-  echo "-u      |   User name                         |   me                    "
+  echo "-u      |   User name                         |   gleitz                "
   status e "Learn more at https://github.com/gleitz/.files"
   exit 0
 }
@@ -256,7 +256,7 @@ PLAY=mac_core                       # -p
 MAS_EMAIL=                          # -m
 MAS_PASSWORD=                       # -n
 TEST=false                          # -t
-USER_NAME=me                        # -u
+USER_NAME=gleitz                    # -u
 SECURE=false                        # -s
 
 status a "📈  Registered Configuration"
