@@ -11,6 +11,8 @@
   shell: 
     /bin/bash -c "source {{ home }}/.nvm/nvm.sh && nvm install 0.12.18 && nvm install 8.10.0 && nvm alias default 8.10.0"
     creates=/home/{{ ansible_user_id }}/.nvm/alias
+  become: true
+  become_user: {{ user_name }}
     
 #- name: Create npm global directory
 #  file:
