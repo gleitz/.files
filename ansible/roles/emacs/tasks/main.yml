@@ -4,5 +4,6 @@
   git:
     repo: "{{ dot_emacs_dot_d_repo }}"
     dest: "{{ home }}/.emacs.d"
+    recursive: no
   become: true
-  become_user: "{{ user_name }}"    
+  become_user: "{{ user_name }}"
