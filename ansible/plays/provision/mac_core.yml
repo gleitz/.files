@@ -132,7 +132,6 @@
       - name: jshint
       - name: jsxhint
       - name: tern
-      - name: phantomjs-prebuilt
       - name: trash
       - name: soundscrape
       - name: eslint
