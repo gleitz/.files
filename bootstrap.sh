@@ -119,10 +119,9 @@ function mac_install_dependencies {
   if ! xcode-select -p 2> /dev/null; then
     status a "Install xcode-select (Command Line Tools)"
     xcode-select --install
+    sudo xcodebuild -license accept
     status b  "Install xcode-select (Command Line Tools)"
   fi
-
-  sudo xcodebuild -license accept
 
   if [[ ! -x "${HOMEBREW_DIR}/bin/brew" ]]; then
     status a "Install Homebrew"
