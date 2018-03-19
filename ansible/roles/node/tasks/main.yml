@@ -11,7 +11,7 @@
 
 - name: Install node and set version
   shell: 
-    /bin/bash -c "source {{ home }}/.nvm/nvm.sh && nvm uninstall 0.12.18 && nvm uninstall 8.10.0 && nvm install 0.12.18 && nvm install 8.10.0 && nvm alias default 8.10.0"
+    /bin/bash -c "source {{ home }}/.nvm/nvm.sh && if [ "$(type -t nvm)" == "function" ] && [ "$(nvm current)" == "v8.10.0" ]; then echo "nvm already setup"; else nvm install 0.12.18 && nvm install 8.10.0 && nvm alias default 8.10.0; fi"
     creates=/home/{{ ansible_user_id }}/.nvm/alias
   become: true
   become_user: "{{ user_name }}"
