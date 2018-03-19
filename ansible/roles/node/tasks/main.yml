@@ -1,0 +1,32 @@
+---
+
+- name: Install nvm
+  git:
+    repo: "https://github.com/creationix/nvm.git"
+    dest: "{{ home }}/.nvm"
+    version: "{{ nvm.version }}"
+  tags: nvm
+
+- name: Install node and set version
+  shell: 
+    /bin/bash -c "source {{ home }}/.nvm/nvm.sh && nvm install 0.12.18 && nvm install 8.10.0 && nvm alias default 8.10.0"
+    creates=/home/{{ ansible_user_id }}/.nvm/alias
+    
+#- name: Create npm global directory
+#  file:
+#    path: "{{ npm_config_prefix }}"
+#    owner: "{{ nodejs_install_npm_user }}"
+#    group: "{{ nodejs_install_npm_user }}"
+#    state: directory
+
+- name: Ensure npm global packages are installed.
+  npm:
+    name: "{{ item.name | default(item) }}"
+    version: "{{ item.version | default('latest') }}"
+    global: yes
+    state: latest
+#  environment:
+#    NPM_CONFIG_PREFIX: "{{ npm_config_prefix }}"
+#    NODE_PATH: "{{ npm_config_prefix }}/lib/node_modules"
+#    NPM_CONFIG_UNSAFE_PERM: "{{ npm_config_unsafe_perm }}"
+  with_items: "{{ nodejs_packages }}"

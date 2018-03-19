@@ -11,6 +11,7 @@
     - aliases
     - functions
     - git
+    - node
     - emacs
     - tmux
     - ssh #id_rsa key generation
@@ -59,7 +60,6 @@
       - mas
       # - mongodb
       - node
-      - nvm
       - openssl
       - postgresql
       - python
@@ -129,46 +129,25 @@
 
     npm_packages:
       - name: mupx
-        global: yes
       - name: jshint
-        global: yes
       - name: jsxhint
-        global: yes
       - name: tern
-        global: yes
       - name: phantomjs
-        global: yes
       - name: soundscrape
-        global: yes
       - name: eslint
-        global: yes
       - name: babel-eslint
-        global: yes
       - name: avn
-        global: yes
       - name: avn-nvm
-        global: yes
       - name: avn-n
-        global: yes
       - name: eslint-plugin-react
-        global: yes
       - name: create-react-app
-        global: yes
       - name: tslint
-        global: yes
       - name: typescript
-        global: yes
       - name: pm2
-        global: yes
       - name: grunt-cli
-        global: yes
       - name: forever
-        global: yes
       - name: serve
-        global: yes
-
-
-
+        
     mas_email: ""
     mas_password: ""
     mas_installed_apps:
