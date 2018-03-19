@@ -131,9 +131,6 @@ function mac_install_dependencies {
   fi
 
   export PATH=${HOMEBREW_DIR}/sbin:${HOMEBREW_DIR}/bin:${PATH}
-  if [[ ! -h ${HOME}/.profile ]]; then
-      ln -s ${HOME}/.bashrc ${HOME}/.profile
-  fi
 
   if [[ ! -x ${HOMEBREW_DIR}/bin/git ]]; then
     status a "Install Git"

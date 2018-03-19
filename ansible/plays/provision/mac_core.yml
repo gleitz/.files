@@ -14,7 +14,7 @@
     - tmux
     - ssh #id_rsa key generation
     - dockutil
-    - macos
+    # - macos
     - iterm2
 
   become: yes
@@ -54,6 +54,7 @@
       - imagemagick
       - kubectl
       - markdown
+      - mas
       # - mongodb
       - node
       - nvm
@@ -92,7 +93,6 @@
       - insertpic
       - istat-menus
       - iterm2
-      - mas
       - ngrok
       - playonmac
       - postico

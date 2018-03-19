@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# SOURCE Andrew Paradi | https://github.com/andrewparadi/.files
+# SOURCE Benjamin Gleitzman
 
+# Inspiration from https://github.com/andrewparadi/.files
 # https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -158,7 +159,6 @@ alias v.add2virtualenv='add2virtualenv'
 alias v.cdsitepackages='cdsitepackages'
 alias v.cd='cdvirtualenv'
 alias v.lssitepackages='lssitepackages'
-alias cd="venv_cd"
 alias z="venv_z"
 
 # Exports
@@ -174,8 +174,8 @@ export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS//bin-x86_64-10_9/emacs
 #export MACOSX_DEPLOYMENT_TARGET=10.8
 export PIP_DOWNLOAD_CACHE=$HOME/.pip
 export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Users/bgleitzman/projects/dip/Darwin/lib/"
-export ANDROID_HOME="/Users/bgleitzman/projects/android/sdk/"
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"${HOME}/projects/dip/Darwin/lib/"
+export ANDROID_HOME="${HOME}/projects/android/sdk/"
 export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
 export PYTHONIOENCODING=utf-8
 
@@ -192,7 +192,7 @@ export HISTCONTROL=ignoredups:erasedups
 export WORKON_HOME="~/.virtualenvs"
 export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient -t'
 export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient -t"
-export PIP_DOWNLOAD_CACHE=$HOME/.pip
+export PIP_DOWNLOAD_CACHE=${HOME}/.pip
 export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
 export PYTHONIOENCODING=utf-8
@@ -208,8 +208,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # Sources
-source /Users/bgleitzman/.rvm/scripts/rvm
-source /usr/local/bin/setup_completeme_key_binding.sh
+[ -s "${HOME}/.rvm/scripts/rvm" ] && . ${HOME}/.rvm/scripts/rvm
+[ -s "/usr/local/bin/setup_completeme_key_binding.sh" ] && . /usr/local/bin/setup_completeme_key_binding.sh
 eval $(thefuck --alias)
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

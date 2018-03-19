@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# SOURCE Andrew Paradi | https://github.com/andrewparadi/.files
+# SOURCE Benjamin Gleitzman
+# Inspiration from https://github.com/andrewparadi/.files
 
 # AP Bootstrap Standard Methods
 prefix="ap::"
@@ -382,7 +383,7 @@ function check_for_virtual_env {
 check_for_virtual_env
 
 function venv_cd {
-  cd "$@" && check_for_virtual_env
+  builtin cd "$@" && check_for_virtual_env
 }
 
 function venv_z {
