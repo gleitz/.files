@@ -11,9 +11,11 @@
     - aliases
     - functions
     - git
+    - emacs
     - tmux
     - ssh #id_rsa key generation
     - dockutil
+    - mas
     # - macos
     - iterm2
 

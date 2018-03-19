@@ -6,7 +6,7 @@
 __powerline() {
     # Colorscheme
     RESET='\[\033[m\]'
-    COLOR_CWD='\[\033[0;34m\]' # blue
+    COLOR_CWD='\[\033[0;97m\]' # white
     COLOR_GIT='\[\033[0;36m\]' # cyan
     COLOR_SUCCESS='\[\033[0;32m\]' # green
     COLOR_FAILURE='\[\033[0;31m\]' # red
