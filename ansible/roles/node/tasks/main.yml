@@ -6,6 +6,8 @@
     dest: "{{ home }}/.nvm"
     version: "{{ nvm.version }}"
   tags: nvm
+  become: true
+  become_user: "{{ user_name }}"
 
 - name: Install node and set version
   shell: 

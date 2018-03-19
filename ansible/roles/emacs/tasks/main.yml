@@ -6,3 +6,5 @@
     dest: "{{ home }}/.emacs.d"
     accept_hostkey: yes
     force: yes
+  become: true
+  become_user: "{{ user_name }}"    
