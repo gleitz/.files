@@ -1,3 +1,3 @@
 ---
 
-dot_emacs_dot_d_repo: git@github.com:gleitz/.emacs.d.git
+dot_emacs_dot_d_repo: https://github.com/gleitz/.emacs.d.git

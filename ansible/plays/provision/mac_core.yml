@@ -132,13 +132,11 @@
       - name: jshint
       - name: jsxhint
       - name: tern
-      - name: phantomjs
+      - name: phantomjs-prebuilt
+      - name: trash
       - name: soundscrape
       - name: eslint
       - name: babel-eslint
-      - name: avn
-      - name: avn-nvm
-      - name: avn-n
       - name: eslint-plugin-react
       - name: create-react-app
       - name: tslint
