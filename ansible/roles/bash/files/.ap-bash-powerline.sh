@@ -5,11 +5,11 @@
 
 __powerline() {
     # Colorscheme
-    RESET='\[\033[m\]'
-    COLOR_CWD='\[\033[0;97m\]' # white
-    COLOR_GIT='\[\033[0;36m\]' # cyan
-    COLOR_SUCCESS='\[\033[0;32m\]' # green
-    COLOR_FAILURE='\[\033[0;31m\]' # red
+    RESET='$(tput sgr0)'
+    COLOR_CWD='$(tput setaf 7)' # white
+    COLOR_GIT='$(tput setaf 6)' # cyan
+    COLOR_SUCCESS='$(tput setaf 2)' # green
+    COLOR_FAILURE='$(tput setaf 1)' # red
 
     SYMBOL_GIT_BRANCH='⑂'
     SYMBOL_GIT_MODIFIED='*'

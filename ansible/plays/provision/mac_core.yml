@@ -50,6 +50,7 @@
       - bash-completion
       - blackbox
       - daemontools
+      - docker
       - dockutil
       - geth
       - git-lfs
@@ -66,6 +67,7 @@
       - python3
       - ruby
       - stack
+      - thefuck
       - the_silver_searcher
       - tmux
       - wget
@@ -82,7 +84,6 @@
       - carbon-copy-cloner
       - cockatrice
       - dashlane
-      - docker
       - dropbox
       - emacs
       - enjoyable
@@ -132,7 +133,7 @@
       - name: jshint
       - name: jsxhint
       - name: tern
-      - name: trash
+      - name: trash-cli
       - name: soundscrape
       - name: eslint
       - name: babel-eslint
@@ -144,7 +145,10 @@
       - name: grunt-cli
       - name: forever
       - name: serve
-        
+
+    ruby_gems:
+      - name: rumember
+
     mas_email: ""
     mas_password: ""
     mas_installed_apps:

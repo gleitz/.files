@@ -1,0 +1,6 @@
+---
+
+- name: Ensure global gems are installed.
+  npm:
+    name: "{{ item.name }}"
+  with_items: "{{ ruby_gems }}"
