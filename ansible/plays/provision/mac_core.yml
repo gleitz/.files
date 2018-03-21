@@ -37,6 +37,7 @@
       - homebrew/core
       - caskroom/cask
       - caskroom/versions
+      - wooga/unityversions
     homebrew_installed_packages:
       # - antibody
       # - cheat
@@ -113,6 +114,7 @@
       - steam
       - studio-3t
       - transmission
+      - unity-android-support-for-editor
       - unrarx
       - viscosity
       - virtualbox
