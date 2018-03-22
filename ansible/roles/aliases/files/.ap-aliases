@@ -41,10 +41,10 @@ alias d='fasd -d'        # directory
 alias f='fasd -f'        # file
 alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d $@ && check_for_virtual_env'     # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i $@ && check_for_virtual_env' # cd with interactive selection
-alias jj='fasd_cd -i $@ && check_for_virtual_env'
-alias j='fasd_cd -i -1 $@ && check_for_virtual_env'
+alias z='fasd_cd -d $@ && check_for_virtual_env && && load_nvmrc'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i $@ && check_for_virtual_env && && load_nvmrc' # cd with interactive selection
+alias jj='fasd_cd -i $@ && check_for_virtual_env && && load_nvmrc'
+alias j='fasd_cd -i -1 $@ && check_for_virtual_env && && load_nvmrc'
 
 # UW Directories
 case "$(uname)" in
