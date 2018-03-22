@@ -41,10 +41,10 @@ alias d='fasd -d'        # directory
 alias f='fasd -f'        # file
 alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # cd with interactive selection
-alias jj='fasd_cd -i'
-alias j='fasd_cd -i -1'
+alias z='fasd_cd -d $@ && check_for_virtual_env'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i $@ && check_for_virtual_env' # cd with interactive selection
+alias jj='fasd_cd -i $@ && check_for_virtual_env'
+alias j='fasd_cd -i -1 $@ && check_for_virtual_env'
 
 # UW Directories
 case "$(uname)" in
@@ -152,9 +152,9 @@ alias v.add2virtualenv='add2virtualenv'
 alias v.cdsitepackages='cdsitepackages'
 alias v.cd='cdvirtualenv'
 alias v.lssitepackages='lssitepackages'
-alias z="venv_z"
 
 # Exports
+export HOMEBREW_BIN="$(brew --prefix)/bin"
 export MANPATH=$MANPATH:/opt/local/share/man
 export INFOPATH=$INFOPATH:/opt/local/share/info
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -162,6 +162,7 @@ export JAVA_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
 export MAVEN_OPTS="-Xmx3072m -XX:MaxPermSize=256m"
 export NODE_PATH="/usr/local/lib/node_modules"
 export WORKON_HOME="~/.virtualenvs"
+export VIRTUALENVWRAPPER_PYTHON="${HOMEBREW_BIN}/python3"
 export EDITOR='/Applications/Emacs.app/Contents/MacOS//bin-x86_64-10_9/emacsclient -t'
 export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS//bin-x86_64-10_9/emacsclient -t"
 #export MACOSX_DEPLOYMENT_TARGET=10.8
@@ -169,7 +170,6 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip
 export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"${HOME}/projects/dip/Darwin/lib/"
 export ANDROID_HOME="${HOME}/projects/android/sdk/"
-export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
 export PYTHONIOENCODING=utf-8
 
 # needed for sed
@@ -187,7 +187,6 @@ export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclien
 export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient -t"
 export PIP_DOWNLOAD_CACHE=${HOME}/.pip
 export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
 export PYTHONIOENCODING=utf-8
 export LC_CTYPE=C
 export LANG=C
@@ -201,15 +200,16 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # Sources
-[ -s "${HOME}/.rvm/scripts/rvm" ] && . ${HOME}/.rvm/scripts/rvm
-[ -s "/usr/local/bin/setup_completeme_key_binding.sh" ] && . /usr/local/bin/setup_completeme_key_binding.sh
+[ -s $HOME/.rvm/scripts/rvm ] && . ${HOME}/.rvm/scripts/rvm
+[ -s $HOMEBREW_BIN/setup_completeme_key_binding.sh ] && . $HOMEBREW_BIN/setup_completeme_key_binding.sh
+[ -s $HOMEBREW_BIN/virtualenvwrapper.sh ] && . $HOMEBREW_BIN/virtualenvwrapper.sh
 eval $(thefuck --alias)
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s $HOME/.avn/bin/avn.sh ] && . $HOME/.avn/bin/avn.sh # load avn
+[ -s "${NVM_DIR}/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "${HOME}/.avn/bin/avn.sh" ] && . $HOME/.avn/bin/avn.sh # load avn
 
 [ -s $HOME/projects/google-cloud-sdk/completion.bash.inc ] && . $HOME/projects/google-cloud-sdk/completion.bash.inc
 [ -s $HOME/projects/google-cloud-sdk/path.bash.inc ] && . $HOME/projects/google-cloud-sdk/path.bash.inc

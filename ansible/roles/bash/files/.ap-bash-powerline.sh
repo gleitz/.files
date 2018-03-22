@@ -5,11 +5,12 @@
 
 __powerline() {
     # Colorscheme
-    RESET='$(tput sgr0)'
-    COLOR_CWD='$(tput setaf 7)' # white
-    COLOR_GIT='$(tput setaf 6)' # cyan
-    COLOR_SUCCESS='$(tput setaf 2)' # green
-    COLOR_FAILURE='$(tput setaf 1)' # red
+    RESET='\[$(tput sgr0)\]'
+    COLOR_CWD='\[$(tput setaf 7)\]' # white
+    COLOR_GIT='\[$(tput setaf 6)\]' # cyan
+    COLOR_VIRTUAL_ENV='\[$(tput setaf 5)\]' # magenta
+    COLOR_SUCCESS='\[$(tput setaf 2)\]' # green
+    COLOR_FAILURE='\[$(tput setaf 1)\]' # red
 
     SYMBOL_GIT_BRANCH='⑂'
     SYMBOL_GIT_MODIFIED='*'
@@ -68,7 +69,13 @@ __powerline() {
             local symbol="$COLOR_FAILURE $PS_SYMBOL $RESET"
         fi
 
-        local cwd="$COLOR_CWD\w$RESET"
+        local cwd="$COLOR_CWD\W$RESET"
+
+        if [ -z $VIRTUAL_ENV ]; then
+            local virtualenv=""
+        else
+            local virtualenv=" $COLOR_VIRTUAL_ENV∇$(basename $VIRTUAL_ENV)$RESET"
+        fi
         # Bash by default expands the content of PS1 unless promptvars is disabled.
         # We must use another layer of reference to prevent expanding any user
         # provided strings, which would cause security issues.
@@ -82,7 +89,7 @@ __powerline() {
             local git="$COLOR_GIT$(__git_info)$RESET"
         fi
 
-        PS1="$cwd$git$symbol"
+        PS1="$cwd$git$virtualenv$symbol"
     }
 
     PROMPT_COMMAND="ps1${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
