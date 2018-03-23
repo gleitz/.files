@@ -57,6 +57,7 @@
       - geth
       - git-lfs
       # - htop
+      - ipython
       - imagemagick
       - kubectl
       - markdown
