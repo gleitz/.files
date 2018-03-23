@@ -17,7 +17,6 @@
     - ssh #id_rsa key generation
     - dockutil
     - mas
-    # - macos
     - iterm2
 
   become: yes
@@ -40,14 +39,7 @@
       - wooga/unityversions
       - j1mr10rd4n/homebrew-tap
     homebrew_installed_packages:
-      # - antibody
-      # - cheat
-      # - fasd    # separate role
-      # - gnupg2  # requires java...
-      # - mas
-      # - privoxy # separate role
-      # - syncthing
-      # - tldr
+      - aspell
       - bash
       - bash-completion
       - blackbox
@@ -56,14 +48,12 @@
       - dockutil
       - geth
       - git-lfs
-      # - htop
       - ipython
       - imagemagick
       - kubectl
       - markdown
       - mas
       - meteor
-      # - mongodb
       - node
       - openssl
       - postgresql
