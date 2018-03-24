@@ -6,7 +6,6 @@
     - etchosts
     - homebrew
     - bash
-    - zsh
     - fasd
     - aliases
     - functions
