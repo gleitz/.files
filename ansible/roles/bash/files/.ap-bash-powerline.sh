@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-## Uncomment to disable git info
-#POWERLINE_GIT=0
-
 __powerline() {
     # Colorscheme
     RESET='\[$(tput sgr0)\]'
@@ -12,8 +9,11 @@ __powerline() {
     COLOR_SUCCESS='\[$(tput setaf 2)\]' # green
     COLOR_FAILURE='\[$(tput setaf 1)\]' # red
 
-    SYMBOL_GIT_BRANCH='\342\[\221\202\]' # symbol: ⑂
     SYMBOL_GIT_MODIFIED='*'
+    # unicode symbols are comprised of 3 octal code points
+    # we escape all but the first code point using \[ and \]
+    # to avoid errors when typing long lines in bash
+    SYMBOL_GIT_BRANCH='\342\[\221\202\]' # symbol: ⑂
     SYMBOL_GIT_PUSH='\342\[\206\221\]' # symbol: ↑
     SYMBOL_GIT_PULL='\342\[\206\223\]' # symbol: ↓
     SYMBOL_VIRTUAL_ENV='\342\[\210\207\]' # symbol: ∇
