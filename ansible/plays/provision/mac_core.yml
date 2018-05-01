@@ -45,6 +45,7 @@
       - daemontools
       - docker
       - dockutil
+      - ffmpeg
       - geth
       - git-lfs
       - ipython
@@ -53,12 +54,14 @@
       - markdown
       - mas
       - meteor
+      - mongodb
       - node
       - openssl
       - postgresql
       - python
       - python3
       - ruby
+      - sox
       - stack
       - thefuck
       - the_silver_searcher
@@ -75,6 +78,7 @@
       - caffeine
       - calibre
       - carbon-copy-cloner
+      - clipgrab
       - cockatrice
       - daisydisk
       - dashlane
@@ -90,7 +94,8 @@
       - insertpic
       - istat-menus
       - iterm2
-      - java
+      - java8
+      - muzzle
       - ngrok
       - playonmac
       - postico
@@ -104,11 +109,12 @@
       - skitch
       - skype
       - slack
+      - sketch
       - spotify
       - steam
       - studio-3t
       - transmission
-      - unity-android-support-for-editor
+      - android-support-for-editor
       - unrarx
       - viscosity
       - virtualbox

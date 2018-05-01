@@ -403,23 +403,29 @@ function cd {
 
 # Replicant
 dev_gpu_kubectl() {
-  ~/projects/google-cloud-sdk/bin/kubectl --context gke_replicant-dev_us-central1-f_gpu-dev-usc1f $@
+  ~/projects/google-cloud-sdk/bin/kubectl  --context gke_replicant-dev_us-central1-f_gpu-dev-usc1f $@
 }
+
 dkubectl() {
-  ~/projects/google-cloud-sdk/bin/kubectl --context gke_replicant-dev_us-central1-a_dev-usc1a $@
+  ~/projects/google-cloud-sdk/bin/kubectl  --context gke_replicant-dev_us-central1-a_dev-usc1a $@
 }
+
 pkubectl() {
-  ~/projects/google-cloud-sdk/bin/kubectl --context gke_replicant-175622_us-central1-a_prd-usc1a $@
+  ~/projects/google-cloud-sdk/bin/kubectl  --context gke_replicant-175622_us-central1-a_prd-usc1a $@
 }
+
 ikubectl() {
-  ~/projects/google-cloud-sdk/bin/kubectl --context gke_replicant-inf_us-central1-a_inf-usc1a $@
+  ~/projects/google-cloud-sdk/bin/kubectl  --context gke_replicant-inf_us-central1-a_inf-usc1a $@
 }
+
 dgcloud() {
   gcloud --project=replicant-dev --account gleitz@atomic.vc $@
 }
+
 pgcloud() {
   gcloud --project=replicant-175622 --account gleitz@atomic.vc $@
 }
+
 igcloud() {
   gcloud --project=replicant-inf --account gleitz@atomic.vc $@
 }
