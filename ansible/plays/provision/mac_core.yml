@@ -53,7 +53,7 @@
       - markdown
       - mas
       - meteor
-      - mongodb
+      # - mongodb
       - node
       - openssl
       - postgresql
