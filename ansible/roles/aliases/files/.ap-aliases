@@ -201,9 +201,15 @@ fi
 
 # Sources
 [ -s $HOME/.rvm/scripts/rvm ] && . ${HOME}/.rvm/scripts/rvm
-[ -s $HOMEBREW_BIN/setup_completeme_key_binding.sh ] && . $HOMEBREW_BIN/setup_completeme_key_binding.sh
 [ -s $HOMEBREW_BIN/virtualenvwrapper.sh ] && . $HOMEBREW_BIN/virtualenvwrapper.sh
 eval $(thefuck --alias)
+
+# fzf
+if [[ ! "$PATH" == */Users/gleitz/.homebrew/opt/fzf/bin* ]]; then
+  export PATH="$PATH:${HOME}/.homebrew/opt/fzf/bin"
+fi
+[[ $- == *i* ]] && source "${HOME}/.homebrew/opt/fzf/shell/completion.bash" 2> /dev/null
+source "${HOME}/.homebrew/opt/fzf/shell/key-bindings.bash"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 

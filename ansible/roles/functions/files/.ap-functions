@@ -414,6 +414,14 @@ pkubectl() {
   ~/projects/google-cloud-sdk/bin/kubectl  --context gke_replicant-175622_us-central1-a_prd-usc1a $@
 }
 
+dpod() {
+  dkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
+}
+
+ppod() {
+  pkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
+}
+
 ikubectl() {
   ~/projects/google-cloud-sdk/bin/kubectl  --context gke_replicant-inf_us-central1-a_inf-usc1a $@
 }

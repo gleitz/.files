@@ -46,6 +46,7 @@
       - docker
       - dockutil
       - ffmpeg
+      - fzf
       - geth
       - git-lfs
       - ipython
@@ -60,6 +61,7 @@
       - postgresql
       - python
       - python3
+      - rename
       - ruby
       - sox
       - stack
@@ -104,6 +106,7 @@
       - remember-the-milk
       - robo-3t
       - rq
+      - sabnzbd
       - scidvsmac
       - screenflow
       - skitch
