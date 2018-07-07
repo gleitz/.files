@@ -33,8 +33,6 @@
     homebrew_cask_require_sha: false
     homebrew_taps:
       - homebrew/core
-      - caskroom/cask
-      - caskroom/versions
       - wooga/unityversions
       - j1mr10rd4n/homebrew-tap
     homebrew_installed_packages:
