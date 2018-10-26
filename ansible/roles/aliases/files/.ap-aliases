@@ -141,6 +141,7 @@ alias fixaudio="sudo killall coreaudiod"
 alias pipupgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
 alias server="python -m http.server 8000 --bind 127.0.0.1"
 alias camerafix="sudo killall VDCAssistant ; sudo killall AppleCameraAssistant"
+alias cs="ag --nobreak --nonumbers --noheading . | fzf"
 alias v.menu='menuvirtualenv'
 alias v='workon'
 alias v.deactivate='deactivate'
