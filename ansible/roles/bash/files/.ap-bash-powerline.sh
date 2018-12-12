@@ -13,11 +13,11 @@ __powerline() {
     # unicode symbols are comprised of 3 octal code points
     # we escape all but the first code point using \[ and \]
     # to avoid errors when typing long lines in bash
-    SYMBOL_GIT_BRANCH='\342\[\221\202\]' # symbol: ⑂
-    SYMBOL_GIT_PUSH='\342\[\206\221\]' # symbol: ↑
-    SYMBOL_GIT_PULL='\342\[\206\223\]' # symbol: ↓
-    SYMBOL_VIRTUAL_ENV='\342\[\210\207\]' # symbol: ∇
-    SYMBOL_APPLE='\357\[\243\277\]' # symbol: 
+    SYMBOL_GIT_BRANCH='¥' # symbol: ¥
+    SYMBOL_GIT_PUSH='!' # symbol: !
+    SYMBOL_GIT_PULL='¡' # symbol: ¡
+    SYMBOL_VIRTUAL_ENV='@' # symbol: @
+    SYMBOL_APPLE='»' # symbol: »
 
     ps1() {
         # Check the exit code of the previous command and display different

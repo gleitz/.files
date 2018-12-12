@@ -41,7 +41,7 @@
       - bash-completion
       - blackbox
       - daemontools
-      - docker
+      - docker-compose
       - dockutil
       - ffmpeg
       - fzf
@@ -54,6 +54,7 @@
       - mas
       - meteor
       # - mongodb
+      - mp3wrap
       - node
       - openssl
       - postgresql
@@ -82,6 +83,7 @@
       - cockatrice
       - daisydisk
       - dashlane
+      - docker
       - dropbox
       - emacs
       - enjoyable
@@ -93,6 +95,7 @@
       - handbrake
       - hazel
       - insertpic
+      - intel-power-gadget
       - istat-menus
       - iterm2
       - java8
@@ -101,6 +104,7 @@
       - playonmac
       - postico
       - postman
+      - prey
       - rekordbox
       - remember-the-milk
       - robo-3t
@@ -111,10 +115,12 @@
       - skitch
       - skype
       - slack
+      - soundflower
       - sketch
       - spotify
       - steam
       - studio-3t
+      - timemachineeditor
       - transmission
       - android-support-for-editor
       - unrarx
@@ -128,10 +134,12 @@
       - zoomus
 
     pip_packages:
+      - name: howdoi
+      - name: jedi
+      - name: jupyter
       - name: pylint
       - name: rst2html5
       - name: virtualenvwrapper
-      - name: howdoi
 
     npm_packages:
       - name: mupx
@@ -158,6 +166,7 @@
     mas_password: ""
     mas_installed_apps:
       - { id: 1053031090, name: "Boxy" }
+      - { id: 411213048, name: "LadioCast" }
     mas_upgrade_all_apps: no
     mas_signin_dialog: yes
 
