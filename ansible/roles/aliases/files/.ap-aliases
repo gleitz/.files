@@ -179,7 +179,7 @@ export PYTHONIOENCODING=utf-8
 # https://blogs.agilefaqs.com/2014/01/12/fixing-perl-warning-setting-locale-failed-on-mac-osx/
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export LANG=C
+export LANG=en_US.UTF-8
 
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
@@ -192,8 +192,6 @@ export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsc
 export PIP_DOWNLOAD_CACHE=${HOME}/.pip
 export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 export PYTHONIOENCODING=utf-8
-export LC_CTYPE=C
-export LANG=C
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
 export HISTCONTROL=ignoredups:erasedups

@@ -99,6 +99,7 @@
       - istat-menus
       - iterm2
       - java8
+      - krisp
       - muzzle
       - ngrok
       - playonmac
@@ -112,6 +113,7 @@
       - sabnzbd
       - scidvsmac
       - screenflow
+      - sequel-pro
       - skitch
       - skype
       - slack

@@ -37,7 +37,7 @@ __powerline() {
         fi
 
         # Fetch the git info
-        local git_eng="env LANG=C git"   # force git output in English to make our work easier
+        local git_eng="env LANG=en_US.UTF-8 git"   # force git output in English to make our work easier
 
         # get current branch name
         local ref=$($git_eng symbolic-ref --short HEAD 2>/dev/null)
