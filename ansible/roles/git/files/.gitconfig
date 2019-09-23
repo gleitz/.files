@@ -17,7 +17,8 @@
 	staged = diff --cached
 	fgrep = grep @{1} $(git rev-list --all)
 	uncommit = reset --soft HEAD^
-	pu = !"git fetch origin -v; git fetch upstream -v; git rebase upstream/master"
+	pum = !"git fetch origin -v; git fetch upstream -v; git rebase upstream/master"
+	pud = !"git fetch origin -v; git fetch upstream -v; git rebase upstream/develop"
 
 [color]
 	ui = true

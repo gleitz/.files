@@ -36,3 +36,6 @@ Host ruse-aws
 Host retropie
   HostName retropie.local
   User pi
+
+Host prodjobs
+  HostName 10.138.0.4

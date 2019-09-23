@@ -449,3 +449,7 @@ igcloud() {
 sgcloud() {
     gcloud --project=replicant-stage --account gleitz@atomic.vc $@
 }
+
+prodjobs() {
+    gcloud beta compute --project "replicant-175622" ssh --zone "us-west1-c" "prodjobs"
+}
