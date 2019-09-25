@@ -53,6 +53,7 @@
       - fzf
       - geth
       - git-lfs
+      - gnu-tar
       - ipython
       - imagemagick
       - k9s
