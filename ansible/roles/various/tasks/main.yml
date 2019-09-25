@@ -6,10 +6,10 @@
   with_items: "{{ startup_login_items }}"
 
 - name: download asana
-  get_url:
-    url: https://www.dropbox.com/sh/di4kmus56l6pbgi/AADtiWjIGs9GiV5uHGRCC8wXa?dl=1
-    dest: /Applications/Asana.app
-    mode: '0755'
+  unarchive:
+    src: https://www.dropbox.com/s/19tyz000sywbk0e/Asana.tar.gz?dl=1
+    dest: /Applications
+    remote_src: yes
 
 - name: Ensure python pip packages are installed.
   shell: /bin/bash -c 'pip3 install {{ pip_packages | join(' ') }}'
