@@ -1,4 +1,7 @@
 ---
 
 nvm:
-  version: 0.34.0
+  version: v0.34.0
+
+node:
+  version: v10.16.0
