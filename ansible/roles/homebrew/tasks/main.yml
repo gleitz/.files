@@ -119,6 +119,7 @@
   with_items: "{{ homebrew_cask_apps }}"
   become: false
   ignore_errors: true
+  upgrade_all: true
 
 - name: Check for Brewfile.
   stat:
