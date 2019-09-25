@@ -31,3 +31,5 @@
 #    NODE_PATH: "{{ npm_config_prefix }}/lib/node_modules"
 #    NPM_CONFIG_UNSAFE_PERM: "{{ npm_config_unsafe_perm }}"
   with_items: "{{ npm_packages }}"
+  executable: "{{ home }}/.nvm/versions/node/{{ node.version }}/bin/node"
+  become: false
