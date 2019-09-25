@@ -22,7 +22,7 @@
 #    state: directory
 
 - name: Ensure npm global packages are installed.
-  shell: /bin/bash -c 'source {{ home }}/.nvm/nvm.sh && npm install -g {{ npm_packages | join(' ') }}'
+  shell: /bin/bash -c 'source {{ home }}/.nvm/nvm.sh && {{ home }}/.nvm/versions/node/{{ node.version }}/bin/npm install -g {{ npm_packages | join(' ') }}'
   # npm:
     # name: "{{ item.name }}"
     # global: yes
