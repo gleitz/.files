@@ -76,9 +76,10 @@ FAQ / Non-Automated Setup Tasks
 
 Additional Gotchas
 ---
-- You will get a message that says `To use the "javac" command-line tool you need to install a JDK.` Clicking "More Info..." will bring you to an install page.
+- Log into the App Store before running.
 - You will need to install the command line tools, and then go into the App Store to do system updates.
 - Once Python is installed, you'll need to run `bootstrap.sh` again to get the pip packages to load.
+
 
 
 Resources

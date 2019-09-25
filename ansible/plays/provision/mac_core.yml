@@ -54,6 +54,7 @@
       - imagemagick
       - k9s
       - kubectl
+      - loginitems
       - markdown
       - mas
       - meteor
