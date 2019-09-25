@@ -205,11 +205,11 @@ function mac_bootstrap {
     mac_scripts
   fi
 
-  status a "${MAIN_DIR} git remote https:->git:"
-  cd ${MAIN_DIR}
-  git remote remove origin
-  git remote add origin git@github.com:gleitz/.files.git
-  status b "${MAIN_DIR} git remote https:->git:"
+  # status a "${MAIN_DIR} git remote https:->git:"
+  # cd ${MAIN_DIR}
+  # git remote remove origin
+  # git remote add origin git@github.com:gleitz/.files.git
+  # status b "${MAIN_DIR} git remote https:->git:"
 
   sudo -k # remove sudo permissions
   status a "🍺  Fin. Bootstrap Script"
