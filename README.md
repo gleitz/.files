@@ -80,7 +80,7 @@ Additional Gotchas
 - You will need to install the command line tools, and then go into the App Store to do system updates.
 - Once Python is installed, you'll need to run `bootstrap.sh` again to get the pip packages to load.
 - `HOMEBREW_NO_ENV_FILTERING=1 API_KEY="abcdef123456" brew cask install prey` to install prey.
-- Need to manually install pip packages
+- Need to manually install pip and npm packages manually
 
 
 
