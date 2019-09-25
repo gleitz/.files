@@ -37,6 +37,7 @@
       - wooga/unityversions
       - j1mr10rd4n/homebrew-tap
       - derailed/k9s
+      - OJFord/formulae
     homebrew_installed_packages:
       - aspell
       - bash
