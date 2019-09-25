@@ -11,5 +11,5 @@
     dest: /Applications/Asana.app
     mode: '0755'
 
-- name: Ensure npm global packages are installed.
-  shell: /bin/bash -c 'pip install {{ pip_packages | join(' ') }}'
+- name: Ensure python pip packages are installed.
+  shell: /bin/bash -c 'pip3 install {{ pip_packages | join(' ') }}'
