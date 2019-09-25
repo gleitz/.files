@@ -9,11 +9,11 @@
   become: true
   become_user: "{{ user_name }}"
 
-#- name: Install node and set version
-#  shell:
-#    /bin/bash -c "source {{ home }}/.nvm/nvm.sh && if [ "$(type -t nvm)" == "function" ] && [ "$(nvm current)" == "system" ]; then echo "nvm already setup"; else nvm install 0.12.18 fi"
-#  become: true
-#  become_user: "{{ user_name }}"
+- name: Install node and set version
+ shell:
+   /bin/bash -c "source {{ home }}/.nvm/nvm.sh && if [ "$(type -t nvm)" == "function" ] && [ "$(nvm current)" == "system" ]; then echo "nvm already setup"; else nvm install stable fi"
+ become: true
+ become_user: "{{ user_name }}"
 
 #- name: Create npm global directory
 #  file:

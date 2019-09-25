@@ -46,6 +46,7 @@
       - daemontools
       - docker-compose
       - dockutil
+      - fasd
       - ffmpeg
       - fzf
       - geth
@@ -65,12 +66,14 @@
       - postgresql
       - python
       - python3
+      - redis
       - rename
       - ruby
       - sox
       - stack
       - thefuck
       - the_silver_searcher
+      - tldr
       - tmux
       - wget
       - yarn
@@ -81,6 +84,7 @@
       - android-studio
       - arduino
       - bettertouchtool
+      - boxy-suite
       - caffeine
       - calibre
       - carbon-copy-cloner
@@ -96,6 +100,7 @@
       - firefox
       - flux
       - fspviewer
+      - fzf
       - google-chrome
       - handbrake
       - hazel
@@ -123,7 +128,6 @@
       - skitch
       - skype
       - slack
-      - soundflower
       - sketch
       - spotify
       - steam
@@ -139,10 +143,14 @@
       - whatsapp
       - xact
       - xquartz
-      - yakyak
       - zoomus
 
     pip_packages:
+      - name: elpy
+      - name: requests
+      - name: selenium
+      - name: aiohttp
+      - name: flake8
       - name: howdoi
       - name: jedi
       - name: jupyter
@@ -175,8 +183,8 @@
     mas_email: ""
     mas_password: ""
     mas_installed_apps:
-      - { id: 1053031090, name: "Boxy" }
-      - { id: 411213048, name: "LadioCast" }
+      - { id: 409183694, name: "Keynote" }
+      - { id: 453114608, name: "JSON Helper" }
     mas_upgrade_all_apps: no
     mas_signin_dialog: yes
 
@@ -193,21 +201,30 @@
       - name: Emacs
         path: "/Applications/Emacs.app"
         pos: 5
-      - name: Boxy
-        path: "/Applications/Boxy.app"
+      - name: Asana
+        path: "/Applications/Asana.app"
         pos: 6
-      - name: Slack
-        path: "/Applications/Slack.app"
+      - name: Boxy for Gmail
+        path: "/Applications/Boxy for Gmail.app"
         pos: 7
       - name: WhatsApp
         path: "/Applications/WhatsApp.app"
         pos: 8
-      - name: YakYak
-        path: "/Applications/YakYak.app"
+      - name: Slack
+        path: "/Applications/Slack.app"
         pos: 9
+      - name: Boxy for Calendar
+        path: "/Applications/Boxy for Calendar.app"
+        pos: 10
       - name: Remember The Milk
         path: "/Applications/Remember The Milk.app"
-        pos: 10
-      - name: Fantastical 2
-        path: "/Applications/Fantastial 2.app"
         pos: 11
+      - name: 1Password 7
+        path: "/Applications/1Password 7.app"
+        pos: 12
+      - name: Postico
+        path: "/Applications/Postico.app"
+        pos: 13
+      - name: Postman
+        path: "/Applications/Postman.app"
+        pos: 14
