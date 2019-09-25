@@ -11,7 +11,9 @@
     - functions
     - git
     - node
+    - ruby
     - emacs
+    - various
     - tmux
     - ssh #id_rsa key generation
     - dockutil
@@ -145,36 +147,36 @@
       - zoomus
 
     pip_packages:
-      - name: elpy
-      - name: requests
-      - name: selenium
-      - name: aiohttp
-      - name: flake8
-      - name: howdoi
-      - name: jedi
-      - name: jupyter
-      - name: pylint
-      - name: rst2html5
-      - name: virtualenvwrapper
+      - elpy
+      - requests
+      - selenium
+      - aiohttp
+      - flake8
+      - howdoi
+      - jedi
+      - jupyter
+      - pylint
+      - rst2html5
+      - virtualenvwrapper
 
     npm_packages:
-      - name: mupx
-      - name: jshint
-      - name: jsxhint
-      - name: tern
-      - name: trash-cli
-      - name: soundscrape
-      - name: eslint
-      - name: babel-eslint
-      - name: eslint-plugin-react
-      - name: create-react-app
-      - name: tslint
-      - name: typescript
-      - name: pm2
-      - name: grunt-cli
-      - name: forever
-      - name: serve
-      - name: npm-check-updates
+      - mupx
+      - jshint
+      - jsxhint
+      - tern
+      - trash-cli
+      - soundscrape
+      - eslint
+      - babel-eslint
+      - eslint-plugin-react
+      - create-react-app
+      - tslint
+      - typescript
+      - pm2
+      - grunt-cli
+      - forever
+      - serve
+      - npm-check-updates
 
     ruby_gems:
       - name: rumember

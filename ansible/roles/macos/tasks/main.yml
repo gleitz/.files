@@ -41,14 +41,3 @@
 - shell: pmset -a autopoweroff 0
   when: filevault_auto_evict
   become: true
-
-- name: add login item
-  command: "loginitems -a '{{ item }}'"
-  changed_when: false
-  with_items: "{{ startup_login_items }}"
-
-- name: download asana
-  get_url:
-    url: https://www.dropbox.com/sh/di4kmus56l6pbgi/AADtiWjIGs9GiV5uHGRCC8wXa?dl=1
-    dest: /Applications/Asana.app
-    mode: '0755'
