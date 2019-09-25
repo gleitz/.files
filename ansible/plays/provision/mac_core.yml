@@ -37,7 +37,6 @@
       - wooga/unityversions
       - j1mr10rd4n/homebrew-tap
       - derailed/k9s
-      - caskroom/versions/java8
     homebrew_installed_packages:
       - aspell
       - bash
@@ -79,6 +78,7 @@
       - yarn
     homebrew_cask_apps:
       - 1password
+      - adoptopenjdk8
       - alfred
       - android-file-transfer
       - android-studio
@@ -107,7 +107,6 @@
       - intel-power-gadget
       - istat-menus
       - iterm2
-      - java8
       - krisp
       - logmein-client
       - muzzle
