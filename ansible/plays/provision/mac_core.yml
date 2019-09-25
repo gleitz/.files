@@ -20,6 +20,7 @@
 
   become: yes
   become_method: sudo
+  ignore_errors: true
 
   vars:
     user_name: gleitz
@@ -36,6 +37,7 @@
       - wooga/unityversions
       - j1mr10rd4n/homebrew-tap
       - derailed/k9s
+      - caskroom/versions/java8
     homebrew_installed_packages:
       - aspell
       - bash
