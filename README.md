@@ -73,6 +73,13 @@ FAQ / Non-Automated Setup Tasks
   1. Log out and in again, or run `launchctl load
    ~/Library/LaunchAgents/syncthing.plist`.
 
+
+Additional Gotchas
+---
+- You will get a message that says `To use the "javac" command-line tool you need to install a JDK.` Clicking "More Info..." will bring you to an install page.
+- You will need to install the command line tools, and then go into the App Store to do system updates.
+
+
 Resources
 ---
 - [Ansible docs](https://docs.ansible.com/ansible/) very thorough spec for all standard Ansible modules and functionality
