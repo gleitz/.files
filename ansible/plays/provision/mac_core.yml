@@ -4,13 +4,13 @@
   connection: local
   roles:
     - etchosts
+    - node
     - homebrew
     - bash
     - fasd
     - aliases
     - functions
     - git
-    - node
     - ruby
     - emacs
     - various
@@ -64,7 +64,6 @@
       # - mongodb
       - moreutils
       - mp3wrap
-      - node
       - openssl
       - postgresql
       - python
