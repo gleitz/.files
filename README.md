@@ -45,6 +45,7 @@ Change which is run with  `-p {play}` flag in the `bootstrap.sh` script
 
 FAQ / Non-Automated Setup Tasks
 ---
+- Disable `Bluetooth` -> `Advanced` -> `Allow Bluetooth devices to wake this computer`.
 - Enable `System Integrity Protection`
   - Check status with `csrutil status`
   - Reboot into Recovery OS: reboot holding Cmd+R

@@ -65,6 +65,7 @@
       # - mongodb
       - moreutils
       - mp3wrap
+      - nmap
       - openssl
       - postgresql
       - python
@@ -89,17 +90,20 @@
       - arduino
       - bettertouchtool
       - boxy-suite
+      - burn
       - caffeine
       - calibre
       - carbon-copy-cloner
       - clipgrab
       - cockatrice
+      - coconutbattery
       - daisydisk
       - dashlane
       - docker
       - dropbox
       - emacs
       - enjoyable
+      - etrecheckpro
       - fantastical
       - firefox
       - flux
@@ -178,8 +182,8 @@
       - serve
       - npm-check-updates
 
-    ruby_gems:
-      - name: rumember
+#    ruby_gems:
+#      - name: rumember
 
     mas_email: ""
     mas_password: ""

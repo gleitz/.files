@@ -18,7 +18,9 @@
 	fgrep = grep @{1} $(git rev-list --all)
 	uncommit = reset --soft HEAD^
 	pum = !"git fetch origin -v; git fetch upstream -v; git rebase upstream/master"
+	pums = !"git stash; git fetch origin -v; git fetch upstream -v; git rebase upstream/master; git stash pop"
 	pud = !"git fetch origin -v; git fetch upstream -v; git rebase upstream/develop"
+	puds = !"git stash; git fetch origin -v; git fetch upstream -v; git rebase upstream/develop; git stash pop"
 
 [color]
 	ui = true

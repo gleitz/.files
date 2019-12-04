@@ -410,6 +410,10 @@ pkubectl() {
     kubectl --context gke_replicant-175622_us-central1-a_prd-usc1a $@
 }
 
+nkubectl() {
+    kubectl --context gke_replicant-prod_us-east4-c_prod-use4c $@
+}
+
 skubectl() {
     kubectl --context gke_replicant-stage_us-central1-a_stage-usc1a $@
 }
@@ -422,12 +426,16 @@ ppod() {
     pkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
 }
 
+npod() {
+    nkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
+}
+
 spod() {
     skubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
 }
 
 ikubectl() {
-    kubectl  --context gke_replicant-inf_us-central1-a_inf-usc1a $@
+    kubectl --context gke_replicant-inf_us-central1-a_inf-usc1a $@
 }
 
 dev_gpu_kubectl() {
@@ -435,21 +443,37 @@ dev_gpu_kubectl() {
 }
 
 dgcloud() {
-    gcloud --project=replicant-dev --account gleitz@atomic.vc $@
+    gcloud --project=replicant-dev --account gleitz@replicant.ai $@
 }
 
 pgcloud() {
-    gcloud --project=replicant-175622 --account gleitz@atomic.vc $@
+    gcloud --project=replicant-175622 --account gleitz@replicant.ai $@
 }
 
 igcloud() {
-    gcloud --project=replicant-inf --account gleitz@atomic.vc $@
+    gcloud --project=replicant-inf --account gleitz@replicant.ai $@
 }
 
 sgcloud() {
-    gcloud --project=replicant-stage --account gleitz@atomic.vc $@
+    gcloud --project=replicant-stage --account gleitz@replicant.ai $@
 }
 
 prodjobs() {
-    gcloud beta compute --project "replicant-175622" ssh --zone "us-west1-c" "prodjobs"
+    pgcloud compute ssh prodjobs-1 --zone us-central1-a
+}
+
+dsecrets() {
+    EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py dkubectl edit secret $@
+}
+
+ssecrets() {
+    EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py skubectl edit secret $@
+}
+
+psecrets() {
+    EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py pkubectl edit secret $@
+}
+
+nsecrets() {
+    EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py nkubectl edit secret $@
 }
