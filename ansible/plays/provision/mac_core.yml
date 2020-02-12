@@ -190,6 +190,9 @@
     mas_installed_apps:
       - { id: 409183694, name: "Keynote" }
       - { id: 453114608, name: "JSON Helper" }
+      - { id: 1182646052, name: "Remote Control for LIFX" }
+      - { id: 488536386, name: "Location Helper" }
+      - { id: 411213048, name: "LadioCast" }
     mas_upgrade_all_apps: no
     mas_signin_dialog: yes
 
@@ -206,30 +209,27 @@
       - name: Emacs
         path: "/Applications/Emacs.app"
         pos: 5
-      - name: Asana
-        path: "/Applications/Asana.app"
-        pos: 6
       - name: Boxy for Gmail
         path: "/Applications/Boxy for Gmail.app"
-        pos: 7
+        pos: 6
       - name: WhatsApp
         path: "/Applications/WhatsApp.app"
-        pos: 8
+        pos: 7
       - name: Slack
         path: "/Applications/Slack.app"
+        pos: 8
+      - name: Fantastical 2
+        path: "/Applications/Fantastical 2.app"
         pos: 9
-      - name: Boxy for Calendar
-        path: "/Applications/Boxy for Calendar.app"
-        pos: 10
       - name: Remember The Milk
         path: "/Applications/Remember The Milk.app"
-        pos: 11
+        pos: 10
       - name: 1Password 7
         path: "/Applications/1Password 7.app"
-        pos: 12
+        pos: 11
       - name: Postico
         path: "/Applications/Postico.app"
-        pos: 13
+        pos: 12
       - name: Postman
         path: "/Applications/Postman.app"
         pos: 14
