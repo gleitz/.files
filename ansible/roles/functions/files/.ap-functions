@@ -402,60 +402,59 @@ function cd {
 }
 
 # Replicant
+# kubectl aliases
 dkubectl() {
-    kubectl --context gke_replicant-dev_us-central1-a_dev-usc1a $@
+  kubectl --context gke_replicant-dev_us-central1-a_dev-usc1a $@
 }
 
 pkubectl() {
-    kubectl --context gke_replicant-175622_us-central1-a_prd-usc1a $@
-}
-
-nkubectl() {
-    kubectl --context gke_replicant-prod_us-east4-c_prod-use4c $@
+  kubectl --context gke_replicant-prod_us-east4-c_prod-use4c $@
 }
 
 skubectl() {
-    kubectl --context gke_replicant-stage_us-central1-a_stage-usc1a $@
-}
-
-dpod() {
-    dkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
-}
-
-ppod() {
-    pkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
-}
-
-npod() {
-    nkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
-}
-
-spod() {
-    skubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
+  kubectl --context gke_replicant-stage_us-west1-a_stage-usw1a $@
 }
 
 ikubectl() {
-    kubectl --context gke_replicant-inf_us-central1-a_inf-usc1a $@
+  kubectl  --context gke_replicant-inf_us-central1-a_inf-usc1a $@
 }
 
 dev_gpu_kubectl() {
-    kubectl --context gke_replicant-dev_us-central1-f_gpu-dev-usc1f $@
+  kubectl --context gke_replicant-dev_us-central1-f_gpu-dev-usc1f $@
 }
 
+# get pods aliases
+dpod() {
+  dkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
+}
+
+ppod() {
+  pkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
+}
+
+spod() {
+  skubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
+}
+
+ipod() {
+  ikubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
+}
+
+# gcloud aliases
 dgcloud() {
-    gcloud --project=replicant-dev --account gleitz@replicant.ai $@
+  gcloud --project=replicant-dev --account USERNAME@replicant.ai $@
 }
 
 pgcloud() {
-    gcloud --project=replicant-175622 --account gleitz@replicant.ai $@
-}
-
-igcloud() {
-    gcloud --project=replicant-inf --account gleitz@replicant.ai $@
+  gcloud --project=replicant-prod --account USERNAME@replicant.ai $@
 }
 
 sgcloud() {
-    gcloud --project=replicant-stage --account gleitz@replicant.ai $@
+  gcloud --project=replicant-stage --account USERNAME@replicant.ai $@
+}
+
+igcloud() {
+  gcloud --project=replicant-inf --account USERNAME@replicant.ai $@
 }
 
 prodjobs() {
