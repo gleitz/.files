@@ -83,6 +83,7 @@
       - yarn
     homebrew_cask_apps:
       - 1password
+      - adobe-digital-editions
       - adoptopenjdk8
       - alfred
       - android-file-transfer
@@ -115,6 +116,7 @@
       - istat-menus
       - iterm2
       - krisp
+      - launchcontrol
       - logmein-client
       - muzzle
       - ngrok
