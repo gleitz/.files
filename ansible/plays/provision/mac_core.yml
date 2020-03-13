@@ -166,23 +166,24 @@
       - virtualenvwrapper
 
     npm_packages:
-      - mupx
+      - babel-eslint
+      - create-react-app
+      - eslint
+      - eslint-plugin-react
+      - forever
+      - grunt-cli
       - jshint
       - jsxhint
+      - npx
+      - mup
+      - npm-check-updates
+      - pm2
+      - rtm-cli
+      - serve
+      - soundscrape
       - tern
       - trash-cli
-      - soundscrape
-      - eslint
-      - babel-eslint
-      - eslint-plugin-react
-      - create-react-app
-      - tslint
       - typescript
-      - pm2
-      - grunt-cli
-      - forever
-      - serve
-      - npm-check-updates
 
 #    ruby_gems:
 #      - name: rumember
