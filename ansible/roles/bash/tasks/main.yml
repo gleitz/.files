@@ -31,6 +31,16 @@
   become: false
 
 - file:
+    src: "{{ roles_dir }}/bash/files/{{ mypy_file }}"
+    dest: "{{ home }}/{{ mypy_file }}"
+    state: link
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+    mode: 0644
+    force: yes
+  become: false
+
+- file:
     path: "{{ home }}/.bashrc"
     state: touch
     owner: "{{ user_name }}"

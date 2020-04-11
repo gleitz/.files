@@ -73,6 +73,8 @@ FAQ / Non-Automated Setup Tasks
   1. Copy the `syncthing.plist` file to `~/Library/LaunchAgents`.
   1. Log out and in again, or run `launchctl load
    ~/Library/LaunchAgents/syncthing.plist`.
+- Set the time zone of Asana in Alfred with `azone`.
+- Install jedi with `pip install -U /Users/gleitz/.emacs.d/elpa/jedi-core-20191011.1750` (use path to latest)
 
 
 Additional Gotchas

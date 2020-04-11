@@ -39,3 +39,10 @@
 	process = git-lfs filter-process
 [pull]
 	rebase = true
+[remote]
+	pushDefault = origin
+	pushRemote = upstream
+[gitlab "gitlab.inf.replicant.ai/api/v4"]
+	user = gleitz
+[forge]
+	remote = upstream

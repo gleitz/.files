@@ -134,7 +134,7 @@ alias eamcs='emacs'
 alias emcas='emacs'
 alias emac='emacs'
 alias emacs='emacsclient'
-alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient'
+alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_14/emacsclient'
 alias fixaudio="sudo killall coreaudiod"
 alias pipupgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
 alias server="python -m http.server 8000 --bind 127.0.0.1"
@@ -164,14 +164,17 @@ export MAVEN_OPTS="-Xmx3072m -XX:MaxPermSize=256m"
 export NODE_PATH="/usr/local/lib/node_modules"
 export WORKON_HOME="~/.virtualenvs"
 export VIRTUALENVWRAPPER_PYTHON="${HOMEBREW_BIN}/python3"
-export EDITOR='/Applications/Emacs.app/Contents/MacOS//bin-x86_64-10_9/emacsclient -t'
-export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS//bin-x86_64-10_9/emacsclient -t"
+export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_14/emacsclient -t"
+export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_14/emacsclient -t"
 #export MACOSX_DEPLOYMENT_TARGET=10.8
 export PIP_DOWNLOAD_CACHE=$HOME/.pip
 export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"${HOME}/projects/dip/Darwin/lib/"
 export ANDROID_HOME="${HOME}/projects/android/sdk/"
 export PYTHONIOENCODING=utf-8
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
+export HISTCONTROL=ignoredups:erasedups
 
 # needed for sed
 # http://stackoverflow.com/questions/19242275/sed-re-error-illegal-byte-sequence-on-mac-os-x
@@ -180,17 +183,6 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export HISTSIZE=1000000
-export HISTFILESIZE=1000000
-export HISTCONTROL=ignoredups:erasedups
-
-# Exports
-export WORKON_HOME="~/.virtualenvs"
-export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient -t'
-export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient -t"
-export PIP_DOWNLOAD_CACHE=${HOME}/.pip
-export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-export PYTHONIOENCODING=utf-8
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
 export HISTCONTROL=ignoredups:erasedups

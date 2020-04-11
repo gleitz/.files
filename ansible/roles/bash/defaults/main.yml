@@ -6,3 +6,4 @@ bash_powerline_url: https://raw.githubusercontent.com/riobard/bash-powerline/mas
 bash_powerline_file: .bash-powerline.sh
 bash_powerline_ap_file: .ap-bash-powerline.sh
 motd_file: .motd.txt
+mypy_file: .mypy.ini
