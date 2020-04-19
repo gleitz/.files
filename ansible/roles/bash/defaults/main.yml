@@ -7,3 +7,6 @@ bash_powerline_file: .bash-powerline.sh
 bash_powerline_ap_file: .ap-bash-powerline.sh
 motd_file: .motd.txt
 mypy_file: .mypy.ini
+flake8rc_file: .flake8rc
+pylintrc_file: .pylintrc
+authinfo_file: .authinfo

@@ -9,7 +9,7 @@ Host *
   Compression yes
 
 Host ideas
-  HostName gleitz.peachyweb.com
+  HostName gleitz.brb.dj
   User gleitz
 
 Host gleitz

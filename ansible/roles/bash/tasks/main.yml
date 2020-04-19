@@ -41,6 +41,36 @@
   become: false
 
 - file:
+    src: "{{ roles_dir }}/bash/files/{{ flake8rc_file }}"
+    dest: "{{ home }}/{{ flake8rc_file }}"
+    state: link
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+    mode: 0644
+    force: yes
+  become: false
+
+- file:
+    src: "{{ roles_dir }}/bash/files/{{ pylintrc_file }}"
+    dest: "{{ home }}/{{ pylintrc_file }}"
+    state: link
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+    mode: 0644
+    force: yes
+  become: false
+
+- file:
+    src: "{{ roles_dir }}/bash/files/{{ authinfo_file }}"
+    dest: "{{ home }}/{{ authinfo_file }}"
+    state: link
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+    mode: 0600
+    force: yes
+  become: false
+
+- file:
     path: "{{ home }}/.bashrc"
     state: touch
     owner: "{{ user_name }}"

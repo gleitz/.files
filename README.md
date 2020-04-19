@@ -75,6 +75,7 @@ FAQ / Non-Automated Setup Tasks
    ~/Library/LaunchAgents/syncthing.plist`.
 - Set the time zone of Asana in Alfred with `azone`.
 - Install jedi with `pip install -U /Users/gleitz/.emacs.d/elpa/jedi-core-20191011.1750` (use path to latest)
+- Symlink the right Serato directory `ln -s /Volumes/Gleitzpod/_Serato_ ~/Music/`
 
 
 Additional Gotchas
