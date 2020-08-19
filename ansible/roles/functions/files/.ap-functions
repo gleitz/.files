@@ -73,8 +73,8 @@ function killall() {
   if [ $# -eq 0 ]; then
     status e "Usage: killall <grep process search team>"
   else
-		for pid in `ps -ef | grep "${1}" | awk '{print $2}'` ; do kill $pid ; done
-	fi;
+	for pid in `ps -ef | grep "${1}" | awk '{print $2}'` ; do kill $pid ; done
+  fi;
 }
 
 # Decapitate git repo – headless – (disregard all local changes, reset back to master)
@@ -147,7 +147,7 @@ function rename_first_line() {
       cp_err=$(cp "$file" "${out_dir}/${first_line}.${extension}" 2>&1)
       if [[ $cp_err != "" || $(diff -q $file ${out_dir}/${first_line}.${extension}) ]]; then
         status e "$file : $cp_err"
-      # else
+        # else
         # status b "$file => ${out_dir}/${first_line}.${extension}"
       fi
     done
@@ -196,105 +196,105 @@ function chmod_admin() {
 
 # Reload Antibody
 function antiup() {
-	rm -rf `antibody home`
-	bash -c "antibody bundle < ~/.zshplugins > ~/.zsh_plugins.sh"
-	cat ~/.zsh_plugins.sh
-	reload
+  rm -rf `antibody home`
+  bash -c "antibody bundle < ~/.zshplugins > ~/.zsh_plugins.sh"
+  cat ~/.zsh_plugins.sh
+  reload
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
-	local tmpFile="${@%/}.tar";
-	tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
+  local tmpFile="${@%/}.tar";
+  tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
 
-	size=$(
-		stat -f"%z" "${tmpFile}" 2> /dev/null; # macOS `stat`
-		stat -c"%s" "${tmpFile}" 2> /dev/null;  # GNU `stat`
-	);
+  size=$(
+	stat -f"%z" "${tmpFile}" 2> /dev/null; # macOS `stat`
+	stat -c"%s" "${tmpFile}" 2> /dev/null;  # GNU `stat`
+	  );
 
-	local cmd="";
-	if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
-		# the .tar file is smaller than 50 MB and Zopfli is available; use it
-		cmd="zopfli";
+  local cmd="";
+  if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
+	# the .tar file is smaller than 50 MB and Zopfli is available; use it
+	cmd="zopfli";
+  else
+	if hash pigz 2> /dev/null; then
+	  cmd="pigz";
 	else
-		if hash pigz 2> /dev/null; then
-			cmd="pigz";
-		else
-			cmd="gzip";
-		fi;
+	  cmd="gzip";
 	fi;
+  fi;
 
-	echo "Compressing .tar ($((size / 1000)) kB) using \`${cmd}\`…";
-	"${cmd}" -v "${tmpFile}" || return 1;
-	[ -f "${tmpFile}" ] && rm "${tmpFile}";
+  echo "Compressing .tar ($((size / 1000)) kB) using \`${cmd}\`…";
+  "${cmd}" -v "${tmpFile}" || return 1;
+  [ -f "${tmpFile}" ] && rm "${tmpFile}";
 
-	zippedSize=$(
-		stat -f"%z" "${tmpFile}.gz" 2> /dev/null; # macOS `stat`
-		stat -c"%s" "${tmpFile}.gz" 2> /dev/null; # GNU `stat`
-	);
+  zippedSize=$(
+	stat -f"%z" "${tmpFile}.gz" 2> /dev/null; # macOS `stat`
+	stat -c"%s" "${tmpFile}.gz" 2> /dev/null; # GNU `stat`
+	        );
 
-	echo "${tmpFile}.gz ($((zippedSize / 1000)) kB) created successfully.";
+  echo "${tmpFile}.gz ($((zippedSize / 1000)) kB) created successfully.";
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
-	local port="${1:-8000}";
-	sleep 1 && open "http://localhost:${port}/" &
-	# Set the default Content-Type to `text/plain` instead of `application/octet-stream`
-	# And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
-	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
+  local port="${1:-8000}";
+  sleep 1 && open "http://localhost:${port}/" &
+  # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
+  # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
+  python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
 }
 
 
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
 function json() {
-	if [ -t 0 ]; then # argument
-		python -mjson.tool <<< "$*" | pygmentize -l javascript;
-	else # pipe
-		python -mjson.tool | pygmentize -l javascript;
-	fi;
+  if [ -t 0 ]; then # argument
+	python -mjson.tool <<< "$*" | pygmentize -l javascript;
+  else # pipe
+	python -mjson.tool | pygmentize -l javascript;
+  fi;
 }
 
 
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
 # opens the given location
 function s() {
-	if [ $# -eq 0 ]; then
-		subl .;
-	else
-		subl "$@";
-	fi;
+  if [ $# -eq 0 ]; then
+	subl .;
+  else
+	subl "$@";
+  fi;
 }
 
 # `a` with no arguments opens the current directory in Atom Editor, otherwise
 # opens the given location
 function a() {
-	if [ $# -eq 0 ]; then
-		atom .;
-	else
-		atom "$@";
-	fi;
+  if [ $# -eq 0 ]; then
+	atom .;
+  else
+	atom "$@";
+  fi;
 }
 
 # `v` with no arguments opens the current directory in Vim, otherwise opens the
 # given location
 function v() {
-	if [ $# -eq 0 ]; then
-		vim .;
-	else
-		vim "$@";
-	fi;
+  if [ $# -eq 0 ]; then
+	vim .;
+  else
+	vim "$@";
+  fi;
 }
 
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
 function o() {
-	if [ $# -eq 0 ]; then
-		open .;
-	else
-		open "$@";
-	fi;
+  if [ $# -eq 0 ]; then
+	open .;
+  else
+	open "$@";
+  fi;
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
@@ -302,7 +302,7 @@ function o() {
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
 function tre() {
-	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+  tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
 # Usage: extract <file>
@@ -329,7 +329,7 @@ extract () {
     esac
   else
     echo "'$1' is not a valid file"
-	fi
+  fi
 }
 
 # Gleitz
@@ -346,26 +346,26 @@ function howdoi_arqade { export HOWDOI_URL="gaming.stackexchange.com" && howdoi 
 function gad { gcloud app deploy --no-promote app-gae.yaml --version=$1-$(git rev-parse --short HEAD); }
 function parse_git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'; }
 function motd () {
-    if [ -e ~/.motd.txt ]; then
-        local rnd=1
-        fn=~/.motd.txt
-        lns=$(wc -l $fn | sed 's|[ ]*\([0-9]*\).*|\1|')
-        if [ "$lns" = 0 ]; then
-          rnd=1
-        else
-          rnd=$(( (RANDOM % (lns + 1)) + 1 ))
-        fi
-        sed -n ${rnd}p $fn
+  if [ -e ~/.motd.txt ]; then
+    local rnd=1
+    fn=~/.motd.txt
+    lns=$(wc -l $fn | sed 's|[ ]*\([0-9]*\).*|\1|')
+    if [ "$lns" = 0 ]; then
+      rnd=1
+    else
+      rnd=$(( (RANDOM % (lns + 1)) + 1 ))
     fi
+    sed -n ${rnd}p $fn
+  fi
 }
 motd
 menuvirtualenv() {
-    select env in `lsvirtualenv -b`; do
-        if [ -n "$env" ]; then
-            workon "$env"
-        fi;
-        break;
-    done;
+  select env in `lsvirtualenv -b`; do
+    if [ -n "$env" ]; then
+      workon "$env"
+    fi;
+    break;
+  done;
 }
 function check_for_virtual_env {
   [ -d .git ] || git rev-parse --git-dir &> /dev/null
@@ -374,12 +374,12 @@ function check_for_virtual_env {
     local ENV_NAME=$(basename `git rev-parse --show-toplevel`)
 
     if [ "${VIRTUAL_ENV##*/}" == $ENV_NAME ]; then
-       : # virtual_env already active, so pass
+      : # virtual_env already active, so pass
     elif [ "${VIRTUAL_ENV##*/}" != $ENV_NAME ] && [ -e $WORKON_HOME/$ENV_NAME/bin/activate ]; then
-       workon $ENV_NAME && export CD_VIRTUAL_ENV=$ENV_NAME
+      workon $ENV_NAME && export CD_VIRTUAL_ENV=$ENV_NAME
     elif [ $CD_VIRTUAL_ENV ]; then
-       echo "deactivate"
-       deactivate && unset CD_VIRTUAL_ENV
+      echo "deactivate"
+      deactivate && unset CD_VIRTUAL_ENV
     fi
   elif [ $CD_VIRTUAL_ENV ]; then
     deactivate && unset CD_VIRTUAL_ENV
@@ -409,6 +409,14 @@ dkubectl() {
 
 pkubectl() {
   kubectl --context gke_replicant-prod_us-east4-c_prod-use4c $@
+}
+
+pekubectl() {
+  kubectl --context gke_replicant-prod_us-east4-c_prod-use4c $@
+}
+
+pwkubectl() {
+  kubectl --context gke_replicant-prod_us-west1-a_prod-usw1a $@
 }
 
 skubectl() {
@@ -458,21 +466,21 @@ igcloud() {
 }
 
 prodjobs() {
-    pgcloud compute ssh prodjobs-1 --zone us-central1-a
+  pgcloud compute ssh prodjobs-1 --zone us-central1-a
 }
 
 dsecrets() {
-    EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py dkubectl edit secret $@
+  EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py dkubectl edit secret $@
 }
 
 ssecrets() {
-    EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py skubectl edit secret $@
+  EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py skubectl edit secret $@
 }
 
 psecrets() {
-    EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py pkubectl edit secret $@
+  EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py pkubectl edit secret $@
 }
 
 nsecrets() {
-    EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py nkubectl edit secret $@
+  EDITOR=emacsclient KUBE_EDITOR=~/projects/kube-secret-editor/kube-secret-editor.py nkubectl edit secret $@
 }

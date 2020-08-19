@@ -76,6 +76,7 @@ FAQ / Non-Automated Setup Tasks
 - Set the time zone of Asana in Alfred with `azone`.
 - Install jedi with `pip install -U /Users/gleitz/.emacs.d/elpa/jedi-core-20191011.1750` (use path to latest)
 - Symlink the right Serato directory `ln -s /Volumes/Gleitzpod/_Serato_ ~/Music/`
+- Make an EmnacsClient to Open With, automator with input as arguments: `exec "/Users/gleitz/.homebrew/bin/emacsclient" --no-wait "$@" >/dev/null 2>&1 &`
 
 
 Additional Gotchas
@@ -83,6 +84,7 @@ Additional Gotchas
 - Log into the App Store before running.
 - You will need to install the command line tools, and then go into the App Store to do system updates.
 - `HOMEBREW_NO_ENV_FILTERING=1 API_KEY="abcdef123456" brew cask install prey` to install prey.
+- Install BTT tool to give it higher priority.
 
 
 Resources

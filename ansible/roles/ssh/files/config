@@ -20,9 +20,13 @@ Host gleitzman
   HostName gleitzman.com
   User gleitz
 
+Host gleitzman-us-west
+  HostName 45.79.104.152
+  User gleitz
+
 Host mit
   User gleitz
-  HostName linux.mit.edu
+  HostName athena.dialup.mit.edu
 
 Host sublimate
   User gleitz_sublimate
@@ -39,3 +43,16 @@ Host retropie
 
 Host prodjobs
   HostName 10.138.0.4
+
+Host gleitzserver
+  HostName gleitz.brb.dj
+  Port 6022
+
+Host gleitzserverroot
+  User root
+  HostName gleitz.brb.dj
+  Port 6022
+
+Host rosen
+  User darya
+  HostName 20.185.16.175

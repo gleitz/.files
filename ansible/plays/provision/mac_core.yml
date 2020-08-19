@@ -44,6 +44,7 @@
       - aspell
       - bash
       - bash-completion
+      - bfg
       - blackbox
       - daemontools
       - docker-compose
@@ -72,11 +73,11 @@
       - python3
       - redis
       - rename
+      - ripgrep
       - ruby
       - sox
       - stack
       - thefuck
-      - the_silver_searcher
       - tldr
       - tmux
       - wget
@@ -85,11 +86,13 @@
       - 1password
       - adobe-digital-editions
       - adoptopenjdk8
+      - airfoil
       - alfred
       - android-file-transfer
       - android-studio
       - arduino
       - bettertouchtool
+      - blender
       - boxy-suite
       - burn
       - caffeine
@@ -100,6 +103,7 @@
       - coconutbattery
       - daisydisk
       - dashlane
+      - discord
       - docker
       - dropbox
       - emacs
@@ -115,8 +119,10 @@
       - intel-power-gadget
       - istat-menus
       - iterm2
+      - jq
       - krisp
       - launchcontrol
+      - loopback
       - logmein-client
       - muzzle
       - ngrok
@@ -139,6 +145,7 @@
       - spotify
       - steam
       - studio-3t
+      - switchresx
       - tableau
       - the-unarchiver
       - timemachineeditor
@@ -146,6 +153,7 @@
       - unity-hub
       - unrarx
       - viscosity
+      - visual-studio
       - virtualbox
       - vlc
       - whatsapp
@@ -172,12 +180,14 @@
       - eslint
       - eslint-plugin-react
       - forever
+      - gatsby-cli
       - grunt-cli
       - jshint
       - jsxhint
-      - npx
       - mup
+      - npx
       - npm-check-updates
+      - prettier
       - pm2
       - rtm-cli
       - serve

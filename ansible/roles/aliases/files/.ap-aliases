@@ -48,9 +48,9 @@ alias j='fasd_cd -i -1'
 
 # UW Directories
 case "$(uname)" in
-    Darwin)   uwsrc="${HOME}/src/uw";   uwpost="-work"  ;;
-    Linux)    uwsrc="${HOME}";          uwpost=""       ;;
-    *)                                                  ;;
+  Darwin)   uwsrc="${HOME}/src/uw";   uwpost="-work"  ;;
+  Linux)    uwsrc="${HOME}";          uwpost=""       ;;
+  *)                                                  ;;
 esac
 alias uw="cd ~/docs/UW/4b"
 alias 349="cd ${uwsrc}/cs349${uwpost}"
@@ -58,11 +58,8 @@ alias 451="cd ${uwsrc}/cs451${uwpost}"
 alias 454="cd ${uwsrc}/cs454${uwpost}"
 alias 487="cd ${uwsrc}/co487${uwpost}"
 
-# UW SSH
-alias uwssh="ssh -4 -i ~/.ssh/id_rsa -Y adsparad@linux.student.cs.uwaterloo.ca"
-alias uwssh1604="ssh -4 -i ~/.ssh/id_rsa -Y adsparad@ubuntu1604-006.student.cs.uwaterloo.ca"
-alias uwssh1404="ssh -4 -i ~/.ssh/id_rsa -Y adsparad@ubuntu1404.student.cs.uwaterloo.ca"
-alias uwssh1604="ssh -4 -i ~/.ssh/id_rsa -Y adsparad@ubuntu1604.student.cs.uwaterloo.ca"
+# SSH
+alias cleanSSH="trash /tmp/*@*"
 
 #Web Download files off of a webpage
 # - Every file: wd ""  {url}
@@ -88,9 +85,9 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 # Clear Homebrew cache
 # Determine platform
 case "$(uname)" in
-    Darwin)   et="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'; rm -rf `brew --cache`" ;;
-    Linux)    et="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash"  ;;
-    *)        et="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash"  ;;
+  Darwin)   et="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'; rm -rf `brew --cache`" ;;
+  Linux)    et="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash"  ;;
+  *)        et="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash"  ;;
 esac
 alias emptytrash="$et"
 
@@ -124,6 +121,7 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Aliases
 alias h='howdoi'
+alias hc='howdoi -c'
 alias s='soundscrape'
 alias pp='python -mjson.tool'
 alias scprsync='rsync -avzP'
@@ -189,7 +187,7 @@ export HISTCONTROL=ignoredups:erasedups
 
 # Misc
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+  . $(brew --prefix)/etc/bash_completion
 fi
 
 # Sources
