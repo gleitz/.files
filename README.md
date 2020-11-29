@@ -85,6 +85,10 @@ Additional Gotchas
 - You will need to install the command line tools, and then go into the App Store to do system updates.
 - `HOMEBREW_NO_ENV_FILTERING=1 API_KEY="abcdef123456" brew cask install prey` to install prey.
 - Install BTT tool to give it higher priority.
+- When you do a `brew upgrade` this will re-install Python and you will need to reinstall your pip_packages.
+- When you upgrade python, need to run `jedi:reinstall-server`.
+- You _may_ need to edit `~/.emacs.d/.python-environments/default/bin/jediepcserver` to put the following at the top: `#!/Users/gleitz/.homebrew/opt/python@3.9/bin/python3.9` (depending on the version of python, but should happen automatically when the server is installed).
+- You _might_ need to `trash ~/Library/Caches/Jedi/`.
 
 
 Resources

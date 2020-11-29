@@ -43,7 +43,7 @@
     homebrew_installed_packages:
       - aspell
       - bash
-      - bash-completion
+      - bash-completion@2
       - bfg
       - blackbox
       - daemontools
@@ -55,6 +55,7 @@
       - geth
       - git-lfs
       - gnu-tar
+      - hyperfine
       - ipython
       - imagemagick
       - k9s
@@ -62,7 +63,6 @@
       - loginitems
       - markdown
       - mas
-      - meteor
       # - mongodb
       - moreutils
       - mp3wrap
@@ -70,7 +70,6 @@
       - openssl
       - postgresql
       - python
-      - python3
       - redis
       - rename
       - ripgrep
@@ -81,18 +80,14 @@
       - tldr
       - tmux
       - wget
-      - yarn
     homebrew_cask_apps:
       - 1password
       - adobe-digital-editions
-      - adoptopenjdk8
       - airfoil
       - alfred
       - android-file-transfer
-      - android-studio
       - arduino
       - bettertouchtool
-      - blender
       - boxy-suite
       - burn
       - caffeine
@@ -102,31 +97,24 @@
       - cockatrice
       - coconutbattery
       - daisydisk
-      - dashlane
       - discord
       - docker
       - dropbox
       - emacs
       - enjoyable
-      - etrecheckpro
       - fantastical
       - firefox
       - flux
-      - fspviewer
       - google-chrome
       - handbrake
       - hazel
-      - intel-power-gadget
       - istat-menus
       - iterm2
       - jq
-      - krisp
       - launchcontrol
       - loopback
-      - logmein-client
       - muzzle
       - ngrok
-      - playonmac
       - postico
       - postman
       - rekordbox
@@ -134,10 +122,8 @@
       - robo-3t
       - rq
       - sabnzbd
-      - scidvsmac
       - screenflow
-      - scroll-reverser
-      - sequel-pro
+      - signal
       - skitch
       - skype
       - slack
@@ -147,10 +133,9 @@
       - studio-3t
       - switchresx
       - tableau
+      - tableplus
       - the-unarchiver
-      - timemachineeditor
       - transmission
-      - unity-hub
       - unrarx
       - viscosity
       - visual-studio
@@ -163,14 +148,14 @@
 
     pip_packages:
       - elpy
-      - requests
-      - selenium
-      - aiohttp
+      - epc
       - flake8
       - howdoi
       - jedi
       - jupyter
+      - mypy
       - pylint
+      - requests
       - rst2html5
       - virtualenvwrapper
 
@@ -184,14 +169,12 @@
       - grunt-cli
       - jshint
       - jsxhint
-      - mup
       - npx
       - npm-check-updates
       - prettier
       - pm2
       - rtm-cli
       - serve
-      - soundscrape
       - tern
       - trash-cli
       - typescript
@@ -217,33 +200,33 @@
       - name: iTerm
         path: "/Applications/iTerm.app"
         pos: 3
-      - name: Spotify
-        path: "/Applications/Spotify.app"
-        pos: 4
       - name: Emacs
         path: "/Applications/Emacs.app"
+        pos: 4
+      - name: Spotify
+        path: "/Applications/Spotify.app"
         pos: 5
       - name: Boxy for Gmail
         path: "/Applications/Boxy for Gmail.app"
         pos: 6
-      - name: WhatsApp
-        path: "/Applications/WhatsApp.app"
+      - name: Signal
+        path: "/Applications/Signal.app"
         pos: 7
       - name: Slack
         path: "/Applications/Slack.app"
         pos: 8
+      - name: Discord
+        path: "/Applications/Discord.app"
+        pos: 9
+      - name: Boxy for Calendar
+        path: "/Applications/Boxy for Calendar.app"
+        pos: 10
       - name: Fantastical 2
         path: "/Applications/Fantastical 2.app"
-        pos: 9
+        pos: 11
       - name: Remember The Milk
         path: "/Applications/Remember The Milk.app"
-        pos: 10
-      - name: 1Password 7
-        path: "/Applications/1Password 7.app"
-        pos: 11
-      - name: Postico
-        path: "/Applications/Postico.app"
         pos: 12
-      - name: Postman
-        path: "/Applications/Postman.app"
-        pos: 14
+      - name: TablePlus
+        path: "/Applications/TablePlus.app"
+        pos: 13

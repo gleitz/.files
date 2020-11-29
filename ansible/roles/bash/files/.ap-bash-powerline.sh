@@ -71,7 +71,7 @@ __powerline() {
             local git=" $COLOR_GIT$ref$marks$RESET"
         fi
 
-        PS1="$cwd$virtualenv$git$symbol"
+        PS1="\n$cwd$virtualenv$git$symbol"
     }
 
     PROMPT_COMMAND="ps1${PROMPT_COMMAND:+; $PROMPT_COMMAND}"

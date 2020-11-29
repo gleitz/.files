@@ -151,6 +151,7 @@ alias v.add2virtualenv='add2virtualenv'
 alias v.cdsitepackages='cdsitepackages'
 alias v.cd='cdvirtualenv'
 alias v.lssitepackages='lssitepackages'
+alias npmc='npm --registry=https://registry.npmjs.org/'
 
 # Exports
 export HOMEBREW_BIN="$(brew --prefix)/bin"
@@ -184,29 +185,3 @@ export LANG=en_US.UTF-8
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
 export HISTCONTROL=ignoredups:erasedups
-
-# Misc
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
-# Sources
-[ -s $HOME/.rvm/scripts/rvm ] && . ${HOME}/.rvm/scripts/rvm
-[ -s $HOMEBREW_BIN/virtualenvwrapper.sh ] && . $HOMEBREW_BIN/virtualenvwrapper.sh
-eval $(thefuck --alias)
-
-# fzf
-if [[ ! "$PATH" == */Users/gleitz/.homebrew/opt/fzf/bin* ]]; then
-  export PATH="$PATH:${HOME}/.homebrew/opt/fzf/bin"
-fi
-[[ $- == *i* ]] && source "${HOME}/.homebrew/opt/fzf/shell/completion.bash" 2> /dev/null
-source "${HOME}/.homebrew/opt/fzf/shell/key-bindings.bash"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "${NVM_DIR}/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "${HOME}/.avn/bin/avn.sh" ] && . $HOME/.avn/bin/avn.sh # load avn
-
-[ -s $HOME/projects/google-cloud-sdk/completion.bash.inc ] && . $HOME/projects/google-cloud-sdk/completion.bash.inc
-[ -s $HOME/projects/google-cloud-sdk/path.bash.inc ] && . $HOME/projects/google-cloud-sdk/path.bash.inc

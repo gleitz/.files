@@ -5,11 +5,5 @@
   changed_when: false
   with_items: "{{ startup_login_items }}"
 
-- name: download asana
-  unarchive:
-    src: https://www.dropbox.com/s/19tyz000sywbk0e/Asana.tar.gz?dl=1
-    dest: /Applications
-    remote_src: yes
-
 - name: Ensure python pip packages are installed.
   shell: /bin/bash -c 'pip3 install {{ pip_packages | join(' ') }}'

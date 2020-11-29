@@ -334,6 +334,31 @@ extract () {
 
 # Gleitz
 
+# Misc
+[[ -r "${HOME}/.homebrew/etc/profile.d/bash_completion.sh" ]] && . "${HOME}/.homebrew/etc/profile.d/bash_completion.sh"
+
+# Sources
+[ -s $HOME/.rvm/scripts/rvm ] && . ${HOME}/.rvm/scripts/rvm
+[ -s $HOMEBREW_BIN/virtualenvwrapper.sh ] && . $HOMEBREW_BIN/virtualenvwrapper.sh
+eval $(thefuck --alias)
+
+# fzf
+if [[ ! "$PATH" == */Users/gleitz/.homebrew/opt/fzf/bin* ]]; then
+  export PATH="$PATH:${HOME}/.homebrew/opt/fzf/bin"
+fi
+# disable fzf completion because it is slow
+# [[ $- == *i* ]] && source "${HOME}/.homebrew/opt/fzf/shell/completion.bash" 2> /dev/null
+source "${HOME}/.homebrew/opt/fzf/shell/key-bindings.bash"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "${HOME}/.homebrew/opt/nvm/nvm.sh" ] && . "${HOME}/.homebrew/opt/nvm/nvm.sh" --no-use # This loads nvm
+[ -s "${HOME}/.homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "${HOME}/.homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+[ -s $HOME/projects/google-cloud-sdk/completion.bash.inc ] && . $HOME/projects/google-cloud-sdk/completion.bash.inc
+[ -s $HOME/projects/google-cloud-sdk/path.bash.inc ] && . $HOME/projects/google-cloud-sdk/path.bash.inc
+
 # Functions
 function pgrep { ps waux | grep $1; }
 function fgrep { git grep $1 $(git rev-list --all); }
@@ -391,8 +416,8 @@ load_nvmrc() {
   if [[ -f .nvmrc && -r .nvmrc ]]; then
     nvm use
   elif [[ $(nvm version) != $(nvm version default)  ]]; then
-    echo "Reverting to nvm default version"
-    nvm use default
+    # echo "Reverting to nvm default version"
+    nvm use default --silent
   fi
 }
 load_nvmrc
@@ -404,7 +429,11 @@ function cd {
 # Replicant
 # kubectl aliases
 dkubectl() {
-  kubectl --context gke_replicant-dev_us-central1-a_dev-usc1a $@
+  kubectl --context gke_replicant-dev_us-west1_dev-usw1 $@
+}
+
+dwkubectl() {
+  kubectl --context gke_replicant-dev_us-west1_dev-usw1 $@
 }
 
 pkubectl() {
@@ -427,6 +456,10 @@ ikubectl() {
   kubectl  --context gke_replicant-inf_us-central1-a_inf-usc1a $@
 }
 
+mlkubectl() {
+  kubectl --context gke_replicant-inf_us-east4-a_inf-ml $@
+}
+
 dev_gpu_kubectl() {
   kubectl --context gke_replicant-dev_us-central1-f_gpu-dev-usc1f $@
 }
@@ -434,6 +467,10 @@ dev_gpu_kubectl() {
 # get pods aliases
 dpod() {
   dkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
+}
+
+dwpod() {
+  dwkubectl get pods | grep $1 | cut -d' ' -f1 | tail -n 1
 }
 
 ppod() {
